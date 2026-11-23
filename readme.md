@@ -157,7 +157,7 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
 
 [comida]: 14:00 - 15:00
 
-<!-- - Generación de componentes: `ng generate component <nombre>`.
+- Generación de componentes: `ng generate component <nombre>`.
   - Template y estilos inline o en ficheros.
   - Guía de estilos actualizada
  
@@ -169,20 +169,21 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
       - De la vista al componente: binding de eventos () -> ya lo veremos
     - Signals en el estado del componente y en la plantilla.
     - Signals y asincronía. Zoneless + Estrategia OnPush
- -->
+
   <!-- NO INCLUIDO
       - Estado en los componentes con ZoneJS v. Zoneless
         - Detección del cambio: Zone v. Zoneless
         - Detección del cambio: Estrategia OnPush
    -->
 
-<!-- - Testing de componentes. Pruebas unitarias
+- Testing de componentes. Pruebas unitarias
   - Test con Vitest. Conceptos básicos y ejemplo
   - Elementos de los test en Angular: TestBed, fixture, detectChanges()
   - Test de implementación v. test de comportamiento.
   - Tests para componentes básicos.
     - Renderizado del componente (e.g. heading).
-    - Coverage. Instalación v-8 : `npm i -D @vitest/coverage-v8` -->
+    - Coverage. Instalación v-8 : `npm i -D @vitest/coverage-v8`
+
 
 <!-- 
     - Procesos asíncronos. Timers (comentado)  
