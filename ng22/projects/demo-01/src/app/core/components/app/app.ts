@@ -1,9 +1,10 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CourseItem } from '../../../features/courses/components/course-item/course-item';
+import { CourseItemSignals } from '../../../features/courses/components/course-item-signals/course-item-signals';
 
 @Component({
-  imports: [RouterOutlet, CourseItem],
+  imports: [RouterOutlet, CourseItem, CourseItemSignals],
   selector: 'ind-root',
   styles: `
     h1 {
@@ -14,11 +15,10 @@ import { CourseItem } from '../../../features/courses/components/course-item/cou
   template: `
     <h1>Hello, {{ title() }}</h1>
 
-
     <section>
-      <h3>Courses</h3>
-      <p>List of courses:</p>
+      <h2>Courses</h2>
       <ind-course-item />
+      <ind-course-item-signals />
     </section>
 
 
