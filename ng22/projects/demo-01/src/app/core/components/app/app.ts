@@ -6,8 +6,8 @@ import { RouterOutlet } from '@angular/router';
   selector: 'ind-root',
   styles: `
     h1 {
-      font-family: Arial;
-      color: #742222;
+      font-family: var(--font-family-heading);
+      color: var(--color-primary);
     }
   `,
   template: `
