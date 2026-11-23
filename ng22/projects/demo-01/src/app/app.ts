@@ -4,7 +4,12 @@ import { RouterOutlet } from '@angular/router';
 @Component({
   imports: [RouterOutlet],
   selector: 'ind-root',
-  styles: [],
+  styles: `
+    h1 {
+      font-family: Arial;
+      color: #742222;
+    }
+  `,
   template: `
     <h1>Hello, {{ title() }}</h1>
 
@@ -12,5 +17,5 @@ import { RouterOutlet } from '@angular/router';
   `,
 })
 export class App {
-  protected readonly title = signal('demo-01');
+  protected readonly title = signal('Demo 01');
 }
