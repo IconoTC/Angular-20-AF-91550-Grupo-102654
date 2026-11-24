@@ -32,7 +32,7 @@ import { Course } from '../../types/course';
   `,
 })
 export class CourseItemSignals {
-   protected readonly course = signal<Course>(COURSES[0]);
+   protected readonly course = signal<Course>([...COURSES][0]);
    protected plainText = 'Probando el uso de signals'
 
    constructor() {
@@ -55,5 +55,5 @@ export class CourseItemSignals {
       console.log('Más asincronía')
     }, 4000)
    }
- 
+
 }
