@@ -7,12 +7,14 @@ import { Header } from '../header/header';
 import { Footer } from '../footer/footer';
 import { Card } from '../../design/card/card';
 import { LogoCoders } from '../logo-coders/logo-coders';
+import { Menu } from '../../design/menu/menu';
 
 @Component({
   imports: [
     RouterOutlet,
     Header,
     LogoCoders,
+    Menu,
     Footer,
     Card,
     CourseItem,
@@ -44,7 +46,7 @@ import { LogoCoders } from '../logo-coders/logo-coders';
   template: `
     <ind-header>
       <ind-logo-coders slot="logo" />
-      <p slot="menu">Aquí irá el menu</p>
+      <ind-menu slot="menu"/>
     </ind-header>
 
     <main class="container">
