@@ -6,12 +6,22 @@ import { CourseItemPro } from '../../../features/courses/components/course-item-
 import { Header } from '../header/header';
 import { Footer } from '../footer/footer';
 import { Card } from '../../design/card/card';
+import { LogoCoders } from '../logo-coders/logo-coders';
 
 @Component({
-  imports: [RouterOutlet, Header, Footer, Card, CourseItem, CourseItemSignals, CourseItemPro],
+  imports: [
+    RouterOutlet,
+    Header,
+    LogoCoders,
+    Footer,
+    Card,
+    CourseItem,
+    CourseItemSignals,
+    CourseItemPro,
+  ],
   selector: 'ind-root',
   styles: `
-   :host {
+    :host {
       display: grid;
       grid-template-rows: auto 1fr auto;
       min-height: 100vh;
@@ -32,11 +42,12 @@ import { Card } from '../../design/card/card';
     }
   `,
   template: `
-    <ind-header></ind-header>
+    <ind-header>
+      <ind-logo-coders slot="logo" />
+      <p slot="menu">Aquí irá el menu</p>
+    </ind-header>
 
     <main class="container">
-
-      
       <section>
         <h2>Cursos</h2>
         <ind-card>
@@ -47,13 +58,10 @@ import { Card } from '../../design/card/card';
           <ind-course-item-signals />
           <ind-course-item-pro />
         </details>
-
       </section>
       <router-outlet />
     </main>
     <ind-footer />
   `,
 })
-export class App {
- 
-}
+export class App {}

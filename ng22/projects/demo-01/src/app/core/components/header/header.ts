@@ -1,12 +1,11 @@
 import { Component, signal } from '@angular/core';
-import { LogoCoders } from '../logo-coders/logo-coders';
 import { User } from '../user/user';
 
 @Component({
-  imports: [LogoCoders, User],
+  imports: [User],
   selector: 'ind-header',
   styles: `
-   :host {
+    :host {
       margin-bottom: 1.5rem;
       min-height: 15vh;
       color: var(--color-primary-hot);
@@ -74,12 +73,13 @@ import { User } from '../user/user';
         gap: 1rem;
         margin-top: 1rem;
       }
-    }`,
+    }
+  `,
   template: `
-       <header class="container">
+    <header class="container">
       <div class="left-side">
         <!-- Slot: Logo Global -->
-         <ind-logo-coders />
+        <ng-content select="[slot='logo']"></ng-content>
       </div>
       <hgroup>
         <h1>{{ title() }}</h1>
@@ -94,7 +94,10 @@ import { User } from '../user/user';
       <div class="bottom-row">
         <p class="first-line">{{ subtitle() }}</p>
         <div class="second-line">
-          <div>Slot: Menu</div>
+          <div>
+            <!-- Slot: Menu -->
+             <ng-content select="[slot='menu']"></ng-content>
+          </div>
           <div>Search</div>
         </div>
       </div>
@@ -102,6 +105,6 @@ import { User } from '../user/user';
   `,
 })
 export class Header {
-   protected readonly title = signal('Demo 01');
-    protected readonly subtitle = signal('Curso Angular 22 - Indra');
+  protected readonly title = signal('Demo 01');
+  protected readonly subtitle = signal('Curso Angular 22 - Indra');
 }
