@@ -162,7 +162,7 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
   - Guía de estilos actualizada
  
   - Componente 🧿CourseItem
-    - Tipos y datos
+    - Tipos y datos. Carpeta Public
     - Estilos: Encapsulación de estilos. ViewEncapsulation.
     - Programación declarativa en el template: 
       - Del componente a la vista: interpolación {{}}, binding de propiedades []
@@ -182,8 +182,7 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
   - Test de implementación v. test de comportamiento.
   - Tests para componentes básicos.
     - Renderizado del componente (e.g. heading).
-    - Coverage. Instalación v-8 : `npm i -D @vitest/coverage-v8`
-
+  - Coverage. Instalación v-8 : `npm i -D @vitest/coverage-v8`
 
 <!-- 
     - Procesos asíncronos. Timers (comentado)  
@@ -191,29 +190,31 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
 
 ### Día 2 (M-24): Componentes del Layout. Paginas
 
-<!-- - Componente 🧿CourseDetails
+- Componente 🧿CourseDetails
   - Eventos
   - Computed signals
 
 - Testing de componentes. Pruebas unitarias
-    - Interacción con el componente (e.g. click en un botón). -->
+    - Interacción con el componente (e.g. click en un botón).
 
-[descanso]: 11:45 - 12:15
+[descanso]: 11:30 - 12:00
 
-<!-- - Scaffolding. Core
+- Scaffolding. Core
   - Componente 🧿Header. Estructura básica en CSS: Grid
   - Componente 🧿Footer
    - Test de Header y Footer 
  
 - Componente 🧿LogoCoders. Fichero svg como template
 - Componente 🧿User. Svg como parte del template
-    - Test de LogoCoders. Spies & mocks -->
+    - Test de LogoCoders. Spies & mocks
+
+- Componente 🧿Card. Proyección de contenido
+    - Test de Card. TestingComponent
 
 [comida]: 14:00 - 15:00
 
-  <!-- - Componente 🧿Card. Proyección de contenido
-    - Uso en el componente 🧿App como contenedor principal.
-    - Test de Card. TestingComponent
+- Proyección de contenido multiple     
+  - Uso en el componente 🧿App como contenedor principal.
 
 - Componentes de navegación  
   - 🧿Menu. Tipo y datos. Iteración con @for
@@ -234,6 +235,7 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
 - Componente 🧿SearchRef. Referencias locales en el template.  
 - Test de Search. Renderizado y data binding
 
+<!-- 
 
 - Nuevo proyecto (app): demo-02.  `ng g app demo-02 --style css --ssr false -p ind -t -s`  
   - Eliminamos componentes innecesarios
