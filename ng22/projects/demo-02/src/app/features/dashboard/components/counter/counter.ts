@@ -1,5 +1,6 @@
-import { Component, output, signal } from '@angular/core';
+import { Component, input, linkedSignal, output } from '@angular/core';
 import { Card } from '../../../../core/design/card/card';
+import { CounterState } from '../../types/counter-state';
 
 const LIMIT = 5;
 
@@ -19,6 +20,7 @@ const LIMIT = 5;
   `,
   template: `
     <ind-card>
+      <h3>Counter {{ counterState().id }}</h3>
       <p>
         Counter clicks: <output>{{ clicks() }}</output>
       </p>
@@ -47,24 +49,41 @@ const LIMIT = 5;
   `,
 })
 export class Counter {
-  protected readonly clicks = signal(0);
-  protected readonly count = signal(0);
+
+  counterState =  input.required<CounterState>();
+
+  protected readonly clicks = linkedSignal(() => this.counterState().clicks);
+  protected readonly count = linkedSignal(() => this.counterState().countValue);
 
   protected readonly limit = LIMIT;
 
   // @Output() protected readonly changeEvent = new EventEmitter<number>();
+  protected readonly changeEvent = output<CounterState>();
 
-  protected readonly changeEvent = output<number>();
+  // constructor() {
+  //   effect(() => {
+  //     this.count.set(this.counterState().countValue);
+  //     this.clicks.set(this.counterState().clicks);
+  //   })
+  // }
 
   protected changeCount(delta: number): void {
     this.count.update((current) => current + delta);
     this.clicks.update((current) => current + 1);
-    this.changeEvent.emit(this.count());
+    this.changeEvent.emit({
+      id: this.counterState().id,
+      clicks: this.clicks(),
+      countValue: this.count()
+    });
   }
 
   protected resetCount(): void {
     this.count.set(0);
     this.clicks.set(0);
-    this.changeEvent.emit(this.count());
+    this.changeEvent.emit({
+      id: this.counterState().id,
+      clicks: this.clicks(),
+      countValue: this.count()
+    });
   }
 }

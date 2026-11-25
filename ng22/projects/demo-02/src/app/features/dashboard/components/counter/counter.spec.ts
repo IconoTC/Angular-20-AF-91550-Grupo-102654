@@ -17,6 +17,8 @@ describe('Counter', () => {
 
     fixture = TestBed.createComponent(Counter);
     component = fixture.componentInstance;
+    fixture.componentRef.setInput('counterState', { id: 1, clicks: 0, countValue: 0 });
+
     await fixture.whenStable();
 
     buttonDebugElements = fixture.debugElement.queryAll(By.css('button'));
