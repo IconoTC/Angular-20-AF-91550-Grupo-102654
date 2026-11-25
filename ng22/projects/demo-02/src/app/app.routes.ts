@@ -18,6 +18,6 @@ export const MENU_OPTIONS: MenuOption[] = [
   },
   {
     label: 'Nosotros',
-    path: '#bout',
+    path: '#about',
   }
 ];
