@@ -13,6 +13,14 @@ describe('Menu', () => {
 
     fixture = TestBed.createComponent(Menu);
     component = fixture.componentInstance;
+
+    fixture.componentRef.setInput('options', [
+      { label: 'Opción 1', path: '/op1' },
+      { label: 'Opción 2', path: '/op2' },
+      { label: 'Opción 3', path: '/op3' },
+      { label: 'Opción 4', path: '/op4' },
+    ]);
+
     await fixture.whenStable();
   });
 

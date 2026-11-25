@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { User } from '../user/user';
 import { Separator } from '../separator/separator';
 import { Toggle } from '../toggle/toggle';
@@ -115,6 +115,11 @@ import { Search } from '../search/search';
   `,
 })
 export class Header {
-  protected readonly title = signal('Demo 02');
-  protected readonly subtitle = signal('Curso Angular 22 - Indra');
+  readonly title = input('Demo', {
+    // eslint-disable-next-line @angular-eslint/no-input-rename
+    alias: 'app-title',
+  });
+  readonly subtitle = input.required<string>();
+
+
 }

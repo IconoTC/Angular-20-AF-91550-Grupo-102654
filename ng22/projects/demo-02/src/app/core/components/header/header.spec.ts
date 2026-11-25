@@ -13,7 +13,13 @@ describe('Header', () => {
 
     fixture = TestBed.createComponent(Header);
     component = fixture.componentInstance;
+    
+    fixture.componentRef.setInput('app-title', 'Test Demo');
+    fixture.componentRef.setInput('subtitle', 'Curso Angular 22 - Indra');
+
+    fixture.detectChanges();
     await fixture.whenStable();
+
   });
 
   it('should create', () => {
@@ -22,19 +28,24 @@ describe('Header', () => {
 
   // Test de implementation o caja blanca
 
-  it('should have as title "Demo 02"', () => {
-    expect(component['title']()).toEqual('Demo 02');
+  it('should have as title "Test Demo"', () => {
+    expect(component['title']()).toEqual('Test Demo');
   });
 
   // Test de comportamiento o caja negra
 
   it('should render title', async () => {
     const element = fixture.nativeElement as HTMLElement;
-    expect(element.querySelector('h1')?.textContent).toContain('Demo 02');
+    expect(element.querySelector('h1')?.textContent).toContain('Test Demo');
   });
 
   it('should render title (debugElement)', async () => {
     const debugElement = fixture.debugElement;
-    expect(debugElement.query(By.css('h1'))?.nativeElement.textContent).toContain('Demo 02');
+    expect(debugElement.query(By.css('h1'))?.nativeElement.textContent).toContain('Test Demo');
+  });
+
+  it('should render subtitle', async () => {
+    const element = fixture.nativeElement as HTMLElement;
+    expect(element.querySelector('.first-line')?.textContent).toContain('Curso Angular 22 - Indra');
   });
 });

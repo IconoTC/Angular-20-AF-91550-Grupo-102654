@@ -1,6 +1,6 @@
-import { Component, signal } from '@angular/core';
-import { MENU_OPTIONS } from '../../../app.routes';
+import { Component, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MenuOption } from '../../types/menu-option';
 
 @Component({
   imports: [CommonModule],
@@ -44,5 +44,5 @@ import { CommonModule } from '@angular/common';
   </nav> `,
 })
 export class Menu {
-  protected readonly options = signal(MENU_OPTIONS)
+  readonly options = input.required<MenuOption[]>()
 }
