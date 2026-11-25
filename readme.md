@@ -285,20 +285,20 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
 - linkedSignals (otro caso de uso)
   - 🧿Filter-options. selectedOption como linkedSignal
   - 🧿Filter. Comunicación entre componentes con linkedSignals
-
 -->
 
-<!-- - Rutas básicas. `app.routes.ts`
+- Rutas básicas. `app.routes.ts`
   - Array de rutas. Array de opciones de menu
   - RouterOutlet en AppComponent.
   - Navegación. Componente menu. @for
   - SPA: RouterLink y RouterLinkActive 
-  - Rutas Lazy. Default import en las páginas
-  - Fix test de componentes que utilizan rutas (Menu, App) -->
 
 [comida]: 14:00 - 15:00
 
-<!-- - Test las paginas (componentes) con rutas. RouterTestingHarness
+- Rutas básicas. `app.routes.ts`
+  - Rutas Lazy. Default import en las páginas
+  - Fix test de componentes que utilizan rutas (Menu, App)
+- Test las paginas (componentes) con rutas. RouterTestingHarness
 
 - 🧿Info. Componente para probar servicios...
 - Introducción a los servicios en Angular.
@@ -310,26 +310,25 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
 
   - Test del servicio TimeService
 
+
   - Test de componentes con servicios (mocks y spies).
     - Modificación del provider en el TestBed. `providers: [ { provide: TimeService, useValue: mockTimeService } ]` -->
-  <!-- - Modificación del provider en el componente. `TestBed.overrideProvider()` -->
+
 <!-- 
 - Servicio Logger. 
   - environments de Angular
-  - Uso de tokens de inyección -->
-
-<!-- - Servicio Logger (final). 
+  - Uso de tokens de inyección 
   - Test del servicio Logger. Casos de uso 
   - 🧿Logger-Demo. Usos del servicio Logger
 -->
 
-<!-- - Pipes
+- Pipes
   - DatePipe. Location "es". 
   - Location "es".  Usar por defecto: inyección de dependencias
   - (Comentado) Pipes propios. Ejemplo: Pipe de `truncate`
 
 
-- Directivas. Estructurales y de atributo -->
+- Directivas. Estructurales y de atributo
 
 <!-- Solo comentado 
 - Directivas propias
