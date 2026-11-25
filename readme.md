@@ -220,6 +220,8 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
   - 🧿Menu. Tipo y datos. Iteración con @for
   - Incorporación en App
   - Test de Menu. Renderizado y @for 
+  - 🧿Socials. @for + @switch: iconos svg de las redes sociales 
+  <!-- - Test de Socials. Renderizado y @for @switch  -->
 
 - Componentes CSS
   - 🧿Separador. Componente de CSS 
@@ -235,23 +237,17 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
 - Componente 🧿SearchRef. Referencias locales en el template.  
 - Test de Search. Renderizado y data binding
 
-<!-- 
+### Día 3 (X-25). Comunicaciones entre Componentes. Rutas, Servicios. Pipes y directivas
 
 - Nuevo proyecto (app): demo-02.  `ng g app demo-02 --style css --ssr false -p ind -t -s`  
   - Eliminamos componentes innecesarios
     - SearchRef
-    - CourseItemSignals 
+    - CourseItemSignals
 
-- TAREA:
-  - 🧿Socials. @for + @switch: iconos svg de las redes sociales 
-  - Test de Socials. Renderizado y @for @switch -->
 
-### Día 3 (X-25). Comunicaciones entre Componentes. Rutas, Servicios. Pipes y directivas
-
-<!-- - Scaffolding. Features
+- Scaffolding. Features
   - Componentes (pages): 🧿Home, 🧿Dashboard, 🧿Courses, 🧿About (Angular).
   - Test de las páginas
-
 
 - Comunicación entre componentes (1)
   - Input. Decoradores @Input. función input(). Drilling
@@ -260,23 +256,25 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
   - Componente 🧿Counter. Estado y eventos (click)
   - Refactor Componente Counter. Condicionales @If. [class}
 
-- Testing de todos los componentes (comentado)
-  - Test de Counter. Eventos. Errores al testar implementación
+<!-- - Testing de todos los componentes (comentado)
+  - Test de Counter. Eventos. Errores al testar implementación -->
 
 - Comunicación entre componentes (2) 
   - 🧿CounterList. Agrupando contadores. 
-  - Output. Decorador @Output. EventEmitter. Función output(). Eventos del contador
-    - Contadores. Eventos con valor  -->
+  - Output. Decorador @Output. EventEmitter. 
 
-[descanso]: 11:30 - 12:00
+[descanso]: 11:40 - 12:10
 
-<!-- - Comunicación entre componentes (3) 
+- Comunicación entre componentes (3) 
+  - Función output(). Eventos del contador
+    - Contadores. Eventos con valor 
+
   - Estado en el componente padre (contenedor/controlador)
     - Input en los contadores. Revision de los totales
     - Respuesta a los eventos
     - input() y linkedSignal
     - sincronización de diversas "fuentes" de cambio
-  - Computed signals   -->
+  - Computed signals
 
 <!--
   - Test de inputs y outputs.  (comentado)
