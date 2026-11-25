@@ -2,12 +2,14 @@ import { Component, signal } from '@angular/core';
 import { Card } from '../../core/design/card/card';
 import { CourseItemPro } from './components/course-item-pro/course-item-pro';
 import { CourseItem } from './components/course-item/course-item';
+import { Timestamp } from '../../core/design/timestamp/timestamp';
 
 @Component({
   imports: [
         Card,
         CourseItem,
         CourseItemPro,
+        Timestamp
   ],
   selector: 'ind-courses-page',
   styleUrls: ['../pages.css'],
@@ -21,6 +23,7 @@ import { CourseItem } from './components/course-item/course-item';
       <summary>Detalles</summary>
       <ind-course-item-pro />
     </details>
+    <ind-timestamp />
   `,
 })
 export default class CoursesPage {

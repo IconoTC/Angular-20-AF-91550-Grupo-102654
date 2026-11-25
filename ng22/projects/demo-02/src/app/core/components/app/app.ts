@@ -5,10 +5,6 @@ import { Footer } from '../footer/footer';
 import { Card } from '../../design/card/card';
 import { LogoCoders } from '../logo-coders/logo-coders';
 import { Menu } from '../../design/menu/menu';
-import HomePage from '../../../features/home/home-page';
-import DashboardPage from '../../../features/dashboard/dashboard-page';
-import CoursesPage from '../../../features/courses/courses-page';
-import AboutPage from '../../../features/about/about-page';
 import { MENU_OPTIONS } from '../../../app.routes';
 
 @Component({
@@ -19,10 +15,6 @@ import { MENU_OPTIONS } from '../../../app.routes';
     Menu,
     Footer,
     Card,
-    HomePage,
-    DashboardPage,
-    CoursesPage,
-    AboutPage,
   ],
   selector: 'ind-root',
   styles: `
@@ -53,7 +45,7 @@ import { MENU_OPTIONS } from '../../../app.routes';
     </ind-header>
 
     <main class="container">
-      <ind-card id="home">
+      <!-- <ind-card id="home">
         <ind-home-page />
       </ind-card>
 
@@ -67,9 +59,13 @@ import { MENU_OPTIONS } from '../../../app.routes';
 
       <ind-card id="about">
         <ind-about-page />
+      </ind-card> -->
+
+      <ind-card>
+        <router-outlet />
+        <!-- Aquí se mostrarán las rutas -->
       </ind-card>
 
-      <router-outlet />
     </main>
     <ind-footer />
   `,

@@ -1,6 +1,7 @@
 import { Component, computed, signal } from '@angular/core';
 import { Counter } from '../counter/counter';
 import { CounterState } from '../../types/counter-state';
+import { Timestamp } from '../../../../core/design/timestamp/timestamp';
 
 const COUNTERS: CounterState[] = [
   { id: 101, clicks: 10, countValue: 4 },
@@ -9,7 +10,7 @@ const COUNTERS: CounterState[] = [
 ];
 
 @Component({
-  imports: [Counter],
+  imports: [Counter, Timestamp],
   selector: 'ind-counters-list',
   styles: ``,
   template: `
@@ -24,6 +25,7 @@ const COUNTERS: CounterState[] = [
       [counterState]="counter"
       (changeEvent)="onChange($event)" />
     }
+    <ind-timestamp />
 
   `,
 })

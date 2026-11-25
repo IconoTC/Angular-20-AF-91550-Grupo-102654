@@ -1,23 +1,57 @@
 import { Routes } from '@angular/router';
 import { MenuOption } from './core/types/menu-option';
+import { TimeService } from './core/services/time.service';
 
-export const routes: Routes = [];
-
-export const MENU_OPTIONS: MenuOption[] = [
+export const routes: Routes = [
   {
-    label: 'Inicio',
-    path: '#home',
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full',
   },
   {
-    label: 'Dashboard',
-    path: '#dashboard',
+    path: 'home',
+    title: 'Inicio | Demo 02',
+    data: {
+      label: 'Inicio',
+    },
+    loadComponent: () => import('./features/home/home-page'),
   },
   {
-    label: 'Cursos',
-    path: '#courses',
+    path: 'dashboard',
+    title: 'Dashboard | Demo 02',
+    data: {
+      label: 'Dashboard',
+    },
+    loadComponent: () => import('./features/dashboard/dashboard-page'),
+    providers: [
+      TimeService
+    ]
   },
   {
-    label: 'Nosotros',
-    path: '#about',
-  }
+    path: 'courses',
+    title: 'Cursos | Demo 02',
+    data: {
+      label: 'Cursos',
+    },
+    loadComponent: () => import('./features/courses/courses-page'),
+  },
+  {
+    path: 'about',
+    title: 'Nosotros | Demo 02',
+    data: {
+      label: 'Nosotros',
+    },
+    loadComponent: () => import('./features/about/about-page'),
+  },
+  {
+    path: '**',
+    redirectTo: 'home',
+  },
 ];
+
+export const MENU_OPTIONS: MenuOption[] = routes
+  .filter((route) => !!route.data?.['label'])
+  .map((route) => ({
+    label: route.data?.['label'] as string,
+    path: route.path as string,
+  }));
