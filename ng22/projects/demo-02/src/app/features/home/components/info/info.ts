@@ -1,12 +1,14 @@
 import { Component, signal } from '@angular/core';
 import { Timestamp } from '../../../../core/design/timestamp/timestamp';
 import { TimeService } from '../../../../core/services/time.service';
+import { DatePipe, TitleCasePipe } from '@angular/common';
+import { TruncatePipe } from '../../../../core/pipes/truncate-pipe';
 
 @Component({
-  imports: [Timestamp],
+  imports: [Timestamp, DatePipe, TitleCasePipe, TruncatePipe],
   selector: 'ind-info',
   providers: [
-     TimeService
+    TimeService,
     // {
     //   provide: TimeService,
     //   useClass: TimeService
@@ -25,9 +27,8 @@ import { TimeService } from '../../../../core/services/time.service';
     //   provide: TimeService,
     //   useValue: {
     //     getTimestamp: () => 1111111111
-    //   } 
+    //   }
     // }
-  
   ],
   styles: `
     ul {
@@ -55,6 +56,7 @@ import { TimeService } from '../../../../core/services/time.service';
   template: `
     <h3>Información del proyecto</h3>
     <p>Este proyecto es un ejemplo de uso de Angular 22 y sus nuevas características.</p>
+    <p>{{ sample | truncate: 50 }}</p>
     <ul>
       <li>Angular 22.3</li>
       <li>TypeScript 6.0</li>
@@ -63,13 +65,15 @@ import { TimeService } from '../../../../core/services/time.service';
     <footer>
       <ul>
         <li>Autor: {{ author() }}</li>
-        <li>Fecha: {{ currentDate() }}</li>
+        <li>Fecha: {{ currentDate() | date: 'fullDate' | titlecase}}</li>
       </ul>
     </footer>
-    <ind-timestamp >
+    <ind-timestamp> </ind-timestamp>
   `,
 })
 export class Info {
   protected readonly author = signal('Alejandro Cerezo');
-  protected readonly currentDate = signal(new Date().toLocaleDateString());
+  protected readonly currentDate = signal(new Date());
+
+  protected readonly sample = 'El proyecto está desarrollado incluyendo un pipe truncate y se encuentra en constante evolución.'
 }
