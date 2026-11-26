@@ -13,9 +13,11 @@ import {
 import { JsonPipe } from '@angular/common';
 import { Router } from '@angular/router';
 import { Auth } from '../../services/auth';
+import { Input } from '../../../../core/design/input/input';
+import { CheckBox } from '../../../../core/design/checkbox/checkbox';
 
 @Component({
-  imports: [FormField, FormRoot, JsonPipe],
+  imports: [FormField, FormRoot, JsonPipe, Input, CheckBox],
   selector: 'ind-login-form-signals',
   styles: `
     form {
@@ -70,28 +72,34 @@ import { Auth } from '../../services/auth';
     <!-- <form (submit)="login($event)" novalidate> -->
     <!-- <form [formRoot]="loginFieldTree" (submit)="login()"> -->
     <form [formRoot]="loginFieldTree">
-      <label for="email" class="form-control">
+      <ind-input type="email" label="Email" [formField]="loginFieldTree.email" />
+
+      <!-- <label for="email" class="form-control">
         <span>Email:</span>
         <input type="email" id="email" [formField]="loginFieldTree.email" />
       </label>
 
       @if (loginFieldTree.email()?.invalid() && loginFieldTree.email()?.touched()) {
         <p class="error">{{ loginFieldTree.email().errors()[0].message }}</p>
-      }
+      } -->
 
-      <label for="password" class="form-control">
+      <ind-input type="password" label="Password" [formField]="loginFieldTree.password" />
+
+      <!-- <label for="password" class="form-control">
         <span>Password:</span>
         <input type="password" id="password" [formField]="loginFieldTree.password" />
       </label>
 
       @if (loginFieldTree.password()?.invalid() && loginFieldTree.password()?.touched()) {
         <p class="error">{{ loginFieldTree.password().errors()[0].message }}</p>
-      }
+      } -->
 
-      <label for="remember" class="form-control checkbox">
+      <ind-check-box label="Remember me" [formField]="loginFieldTree.rememberMe" />
+
+      <!-- <label for="remember" class="form-control checkbox">
         <input type="checkbox" id="remember" [formField]="loginFieldTree.rememberMe" />
         <span>Remember me</span>
-      </label>
+      </label> -->
 
       <button type="submit" [disabled]="loginFieldTree().invalid()">Login</button>
     </form>
@@ -134,13 +142,12 @@ export class LoginFormSignals {
       console.log('LoginFormSignals.login() - Formulario inválido');
       return;
     }
-    const request = {...this.loginFieldTree().value()};
+    const request = { ...this.loginFieldTree().value() };
     console.log('LoginFormSignals.login()');
     console.log('loginModel():', request);
     this.loginFieldTree().reset(this.#loginInitialState);
 
     const response = await this.#auth.loginPromise(request);
     this.#router.navigate(['/auth', 'login', 'post-login'], { state: response });
-
   }
 }
