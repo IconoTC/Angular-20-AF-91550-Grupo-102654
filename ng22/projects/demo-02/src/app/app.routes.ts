@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { MenuOption } from './core/types/menu-option';
 import { TimeService } from './core/services/time.service';
+import { authRoutes } from './features/auth/routes/auth.routes';
 
 export const routes: Routes = [
   {
@@ -23,9 +24,7 @@ export const routes: Routes = [
       label: 'Dashboard',
     },
     loadComponent: () => import('./features/dashboard/dashboard-page'),
-    providers: [
-      TimeService
-    ]
+    providers: [TimeService],
   },
   {
     path: 'courses',
@@ -43,6 +42,11 @@ export const routes: Routes = [
     },
     loadComponent: () => import('./features/about/about-page'),
   },
+  {
+    path: 'auth',
+    children: authRoutes,
+  },
+
   {
     path: '**',
     redirectTo: 'home',
