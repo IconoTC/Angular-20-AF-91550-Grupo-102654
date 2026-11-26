@@ -1,8 +1,9 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { Timestamp } from '../../../../core/design/timestamp/timestamp';
 import { TimeService } from '../../../../core/services/time.service';
 import { DatePipe, TitleCasePipe } from '@angular/common';
 import { TruncatePipe } from '../../../../core/pipes/truncate-pipe';
+import { Logger } from '../../../../core/services/logger';
 
 @Component({
   imports: [Timestamp, DatePipe, TitleCasePipe, TruncatePipe],
@@ -69,9 +70,12 @@ import { TruncatePipe } from '../../../../core/pipes/truncate-pipe';
       </ul>
     </footer>
     <ind-timestamp> </ind-timestamp>
+    <p>Logger level: {{ logger.level }}</p>
   `,
 })
 export class Info {
+  protected logger = inject(Logger);
+
   protected readonly author = signal('Alejandro Cerezo');
   protected readonly currentDate = signal(new Date());
 
