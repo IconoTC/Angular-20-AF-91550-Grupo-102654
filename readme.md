@@ -334,46 +334,43 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
   - Uso de tokens de inyección 
   - Test del servicio Logger. Casos de uso 
   - 🧿Logger-Demo. Usos del servicio Logger
-
-
-<!-- - Feature Auth
   
 - RxJS (Observables)
   - Introducción. Observables, subscription, operadores.
  
+- Feature Auth
+
   - Servicio Auth. Login simulado con Observables y con Promesas.
   - Test del servicio Auth. Casos de uso 
 
   - Rutas anidadas. 
     - Login y Register
-    - Fichero de rutas propio de Auth. `auth.routes.ts` -->
-
-[descanso] - 11:25 - 11:55
-
+    - Fichero de rutas propio de Auth. `auth.routes.ts
   
-  <!-- - Rutas con parámetros
+  - Rutas con parámetros
     - LoginPage. Parámetros y formularios posibles
       (td, md-rx, signals)
-    - @if / @switch 
-    - menu de selección -->
 
-<!-- COMENTADO
- 
+[descanso] - 11:40 - 12:10
+  
+  - Formularios posibles
+    - @if / @switch 
+    - menu de selección
+
+<!-- COMENTADO 
   - Selección del formulario: 🧿Componente sidebar. 
     - linkedSignals. Comunicación entre componentes
     - respuesta a la navegación. router.events.subscribe()
 -->
 
-<!-- - 🧿Componente LoginFormTd: Forms Template Driven (TD)
+- 🧿Componente LoginFormTd: Forms Template Driven (TD)
     - NgForm implícito, NgModel. Referencias locales
     - Paso de ngForm al onSubmit: form.value; form.reset()
     - Validaciones nativas de HTML. Mensajes de validación
-    - Submit y navegación a otra página. router.navigate() -->
+    - Submit y navegación a otra página. router.navigate()
+    - Rutas con estado
 
 [comida] 14:00 - 15:00
-
-<!-- - 🧿Componente LoginFormTd: Forms Template Driven (TD)
-  - Rutas con estado
 
 - 🧿Componente LoginFormMdRx: Formularios reactivos (MD). LoginForm
   - FormGroup, FormControl, FormBuilder
@@ -381,35 +378,35 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
   - Validaciones síncronas (y asíncronas).
     - Mensajes de validación 
 
+
 - 🧿Componente LoginFormSignals: Formularios con Signals.
   - Model (signal), FieldTree, FieldState 
   - Binding desde el template  [formField] y (submit)
   - Schema de validación
-  - Directiva FormRoot y submit -->
+  - Directiva FormRoot y submit
 
 <!--
 - RegisterForm. Otros controles HTML (comentado)
 -->
 
- <!-- - Custom controls
+- Custom controls en el Design System 
   - 🧿Componente Input. [FormValueControl]
-  - Uso del 🧿Componente Input en un formulario con Signals -->
+    - Uso del 🧿Componente Input en un formulario con Signals
+  - 🧿Componente CheckBox. [FormCheckboxControl]
+    - Uso del 🧿Componente CheckBox en un formulario con Signals
 
 <!-- NO INCLUIDO -->
-<!-- - Testing de formularios reactivos. -->
+<!-- - Testing de formularios -->
 
 <!-- NO INCLUIDO
 - Signal model()
-  - Componente 🧿Check. Input y Output. Design System CheckBox
   - Componente 🧿Terms. Input y Output. Comunicación entre componentes
   - Uso de model en esta situación 
 -->
 
 ### Día 5 (V-27).  Arquitectura. Servicios repo (HTTP) y state 
 
-<!-- - Custom controls
-  - Solución de problemas: (blur)
-  - Incorporación del CSS
+<!--
 
 - Arquitectura de componentes
   - Componentes de contenedores vs de presentación.
@@ -457,7 +454,6 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
 
 <!-- - Nuevo proyecto (app): demo-03.  
   `ng g app demo-03 --style css --ssr false -p ind -t -s` 
-
 
 - Servicios stateful: patrón Flux -->
 
