@@ -244,7 +244,6 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
     - SearchRef
     - CourseItemSignals
 
-
 - Scaffolding. Features
   - Componentes (pages): 🧿Home, 🧿Dashboard, 🧿Courses, 🧿About (Angular).
   - Test de las páginas
@@ -310,17 +309,8 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
 
   - Test del servicio TimeService
 
-
   - Test de componentes con servicios (mocks y spies).
     - Modificación del provider en el TestBed. `providers: [ { provide: TimeService, useValue: mockTimeService } ]` -->
-
-<!-- 
-- Servicio Logger. 
-  - environments de Angular
-  - Uso de tokens de inyección 
-  - Test del servicio Logger. Casos de uso 
-  - 🧿Logger-Demo. Usos del servicio Logger
--->
 
 - Pipes
   - DatePipe. Location "es". 
@@ -338,6 +328,13 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
 -->
 
 ### Día 4 (J-26). Servicios y asincronía. Formularios TD, DD, SD
+
+- Servicio Logger. 
+  - environments de Angular
+  - Uso de tokens de inyección 
+  - Test del servicio Logger. Casos de uso 
+  - 🧿Logger-Demo. Usos del servicio Logger
+
 
 <!-- - Feature Auth
   
