@@ -1,5 +1,6 @@
-import { Component, output } from '@angular/core';
+import { Component, inject, output } from '@angular/core';
 import { Course } from '../../types/course';
+import { CoursesStore } from '../../services/courses-store';
 
 @Component({
   imports: [],
@@ -16,7 +17,9 @@ import { Course } from '../../types/course';
     `,
 })
 export class CourseForm {
-  protected readonly addEvent = output<Omit<Course, 'id'>>();
+
+  readonly store = inject(CoursesStore);
+  protected readonly addEvent = output<void>();
 
   protected newCourse: Omit<Course, 'id'> = {
     title: 'Docker para desarrolladores',
@@ -33,6 +36,7 @@ export class CourseForm {
   };
 
   addEmit() {
-    this.addEvent.emit(this.newCourse);
+    this.store.addCourse(this.newCourse);
+    this.addEvent.emit();
   }
 }

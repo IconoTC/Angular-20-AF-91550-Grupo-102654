@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Header } from '../header/header';
 import { Footer } from '../footer/footer';
@@ -6,6 +6,7 @@ import { Card } from '../../design/card/card';
 import { LogoCoders } from '../logo-coders/logo-coders';
 import { Menu } from '../../design/menu/menu';
 import { MENU_OPTIONS } from '../../../app.routes';
+import { CoursesStore } from '../../../features/courses/services/courses-store';
 
 @Component({
   imports: [RouterOutlet, Header, LogoCoders, Menu, Footer, Card],
@@ -63,7 +64,13 @@ import { MENU_OPTIONS } from '../../../app.routes';
   `,
 })
 export class App {
+  readonly #coursesStore = inject(CoursesStore);
   protected readonly title = signal('Demo 03');
   protected readonly subtitle = signal('Curso Angular 22 - Indra');
   protected readonly menuOptions = signal(MENU_OPTIONS);
+
+   constructor() {
+    this.#coursesStore.loadCourses();
+  }
+
 }

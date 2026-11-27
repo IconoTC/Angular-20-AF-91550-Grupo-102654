@@ -1,5 +1,6 @@
-import { Component, input, output, ViewEncapsulation } from '@angular/core';
+import { Component, inject, input, ViewEncapsulation } from '@angular/core';
 import { Course } from '../../types/course';
+import { CoursesStore } from '../../services/courses-store';
 
 @Component({
   imports: [],
@@ -27,11 +28,11 @@ import { Course } from '../../types/course';
     <img [src]="course().image" [alt]="course().title" />
     <h3 [title]="'ID: ' + course().id">{{ course().title }}</h3>
     <label>
-      <input type="checkbox" [checked]="course().isOfficial" (change)="changeEmit()"/>
+      <input type="checkbox" [checked]="course().isOfficial" (change)="change()"/>
       <span>Curso oficial</span>
     </label>
     <div>
-      <button (click)="deleteEmit()">Eliminar</button>
+      <button (click)="delete()">Eliminar</button>
       <button disabled>Editar</button>
       <button disabled>Ver detalles</button>
     </div>
@@ -40,21 +41,19 @@ import { Course } from '../../types/course';
 })
 export class CourseItem {
   // Válido en 22.3: private
+
+  readonly store = inject(CoursesStore);
   readonly course = input.required<Course>();
-  //public readonly courses = signal<Course[]>([]);
 
-  protected readonly deleteEvent = output<Course['id']>();
-  protected readonly changeEvent = output<Course>();
-
-  deleteEmit() {
-    this.deleteEvent.emit(this.course().id);
+  delete() {
+    this.store.deleteCourse(this.course().id);
   }
 
-  changeEmit() {
+  change() {
     const updatedCourse: Course = {
       ...this.course(),
       isOfficial: !this.course().isOfficial,
     };
-    this.changeEvent.emit(updatedCourse);
+     this.store.updateCourse(updatedCourse);
   }
 }
