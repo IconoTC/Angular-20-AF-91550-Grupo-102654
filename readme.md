@@ -428,11 +428,9 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
 [descanso] 11:30 - 12:00
 [encuesta]
 
-<!-- 
 - Uso de environments
-- -->
 
-<!--
+
  Servicio HttpClient. Observables (RxJs).
 
   - Antes de Angular 21: Configuración del servicio HTTP: provider
@@ -442,7 +440,7 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
 
   - Uso desde el componente (Courses-List). 
     - Repositorio y lógica de negocio (estado). Estrategias  
-   -->
+
 
 <!-- NO INCLUIDO
   - Tests de servicios HTTP real (sin mock) 
@@ -450,10 +448,11 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
   - Test de componentes con servicios HTTP (mocks y spies).
 -->
 
-<!-- - Nuevo proyecto (app): demo-03.  
+- Nuevo proyecto (app): demo-03.  
   `ng g app demo-03 --style css --ssr false -p ind -t -s` 
 
-- Servicios stateful: patrón Flux -->
+
+- Servicios stateful: patrón Flux
 
 <!-- Comentado
   - Estado con RxJS: Subjects
@@ -462,7 +461,7 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
     - Métodos para modificar el estado (add, toggle, remove)
 -->
   
- <!-- - Estado con Signals: signal (WriteableSignal) y readOnly/computed (Signal)
+- Estado con Signals: signal (WriteableSignal) y readOnly/computed (Signal)
   
   - Servicio Store con CoursesState
     - Estado privado con WriteableSignal
@@ -471,7 +470,6 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
 
 - Uso del estado desde los componentes Courses...
 - Uso desde cualquier parte de la aplicación (Header) 
- -->
 
 <!-- NO INCLUIDO
 - Más novedades (Signals)
