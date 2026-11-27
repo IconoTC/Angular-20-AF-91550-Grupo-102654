@@ -3,7 +3,7 @@ import { CourseItem } from './course-item';
 import { Course } from '../../types/course';
 
 const COURSE_MOCK: Course = {
-  id: 1,
+  id: '1',
   title: 'Curso de Angular',
   description: 'Aprende Angular desde cero',
   duration: '10 horas',
