@@ -406,7 +406,6 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
 
 ### Día 5 (V-27).  Arquitectura. Servicios repo (HTTP) y state 
 
-<!--
 
 - Arquitectura de componentes
   - Componentes de contenedores vs de presentación.
@@ -417,24 +416,23 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
 
   - Componente Courses-List. Lógica del estado
   - Componente Courses-Item. Input y Output (Eventos)
-  - Componente Courses-Form. Output (Eventos)  -->
+  - Componente Courses-Form. Output (Eventos) 
 
-[descanso] 11:20 - 11:50
-
-<!-- - Servicios y patrón Repository
+- Servicios y patrón Repository
   - Mock de datos. Interface de los repositorios
-  - Repositorios usando RxJS (Observables). 
- -->
-<!-- 
-  - Uso de promesas en los servicios.
-  - Uso del repo en el componente
-  - -->
+  - Repositorios usando RxJS (Observables) / Promises. 
 
-<!-- - API server fake basado en JSONServer.
+ - API server fake basado en JSONServer.
   - Prueba con Postman
 
-- Uso de environments
+[descanso] 11:30 - 12:00
+[encuesta]
 
+<!-- 
+- Uso de environments
+- -->
+
+<!--
  Servicio HttpClient. Observables (RxJs).
 
   - Antes de Angular 21: Configuración del servicio HTTP: provider
