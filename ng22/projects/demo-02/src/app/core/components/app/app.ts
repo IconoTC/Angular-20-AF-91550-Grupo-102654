@@ -8,14 +8,7 @@ import { Menu } from '../../design/menu/menu';
 import { MENU_OPTIONS } from '../../../app.routes';
 
 @Component({
-  imports: [
-    RouterOutlet,
-    Header,
-    LogoCoders,
-    Menu,
-    Footer,
-    Card,
-  ],
+  imports: [RouterOutlet, Header, LogoCoders, Menu, Footer, Card],
   selector: 'ind-root',
   styles: `
     :host {
@@ -65,14 +58,12 @@ import { MENU_OPTIONS } from '../../../app.routes';
         <router-outlet />
         <!-- Aquí se mostrarán las rutas -->
       </ind-card>
-
     </main>
     <ind-footer />
   `,
 })
 export class App {
-  protected readonly title = signal('Demo 02');
+  protected readonly title = signal('Demo 03');
   protected readonly subtitle = signal('Curso Angular 22 - Indra');
   protected readonly menuOptions = signal(MENU_OPTIONS);
-
 }

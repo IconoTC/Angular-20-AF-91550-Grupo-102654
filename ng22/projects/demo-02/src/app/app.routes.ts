@@ -11,7 +11,7 @@ export const routes: Routes = [
   },
   {
     path: 'home',
-    title: 'Inicio | Demo 02',
+    title: 'Inicio | Demo 03',
     data: {
       label: 'Inicio',
     },
@@ -19,7 +19,7 @@ export const routes: Routes = [
   },
   {
     path: 'dashboard',
-    title: 'Dashboard | Demo 02',
+    title: 'Dashboard | Demo 03',
     data: {
       label: 'Dashboard',
     },
@@ -28,7 +28,7 @@ export const routes: Routes = [
   },
   {
     path: 'courses',
-    title: 'Cursos | Demo 02',
+    title: 'Cursos | Demo 03',
     data: {
       label: 'Cursos',
     },
@@ -36,7 +36,7 @@ export const routes: Routes = [
   },
   {
     path: 'about',
-    title: 'Nosotros | Demo 02',
+    title: 'Nosotros | Demo 03',
     data: {
       label: 'Nosotros',
     },

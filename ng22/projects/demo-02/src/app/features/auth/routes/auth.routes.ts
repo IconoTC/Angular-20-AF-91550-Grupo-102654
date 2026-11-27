@@ -8,12 +8,12 @@ export const authRoutes: Routes = [
   },
   {
     path: 'login/:formType',
-    title: 'Login | Demo 02',
+    title: 'Login | Demo 03',
     loadComponent: () => import('../pages/login-page'),
   },
   {
     path: 'register',
-    title: 'Registro | Demo 02',
+    title: 'Registro | Demo 03',
     loadComponent: () => import('../pages/register-page'),
   },
 ];
